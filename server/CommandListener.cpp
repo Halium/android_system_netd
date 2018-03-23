@@ -251,9 +251,10 @@ CommandListener::CommandListener() :
 
     gCtls->bandwidthCtrl.enableBandwidthControl(false);
 
-    if (int ret = RouteController::Init(NetworkController::LOCAL_NET_ID)) {
-        ALOGE("failed to initialize RouteController (%s)", strerror(-ret));
-    }
+    /// Commented out because this resets network connections on container startup
+    // if (int ret = RouteController::Init(NetworkController::LOCAL_NET_ID)) {
+    //     ALOGE("failed to initialize RouteController (%s)", strerror(-ret));
+    // }
 }
 
 CommandListener::InterfaceCmd::InterfaceCmd() :
